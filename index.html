@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>میری ٹیلیگرام منی ایپ</title>
+    <!-- ٹیلیگرام کا آفیشل Web App سکرپٹ -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 50px;
+        }
+        button {
+            background-color: #22c55e;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>خوش آمدید!</h1>
+    <p>یہ میری پہلی ٹیلیگرام منی ایپ ہے۔</p>
+    <button onclick="showAlert()">کلک کریں</button>
+
+    <script>
+        // ٹیلیگرام ویب ایپ کو انیشیلائز کرنا
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // ایپ کو فل سکرین کریں
+
+        function showAlert() {
+            let user = tg.initDataUnsafe.user;
+            let name = user ? user.first_name : "صارف";
+            tg.showAlert(`سلام ${name}! آپ نے کامیابی سے بٹن دبا دیا ہے۔`);
+        }
+    </script>
+</body>
+</html>
